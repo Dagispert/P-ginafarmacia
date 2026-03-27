@@ -1,183 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANTI-RESACA™</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTI-RESACA™ 500mg</title>
+    <style>
+        :root {
+            --primary-purple: #5b36af;
+            --text-main: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg-light: #ffffff;
+            --border-color: #e5e5e7;
+        }
 
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f5f5f7;
-  margin: 0;
-  color: #1d1d1f;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
 
-.hero-text h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
+        .hero-text { flex: 1; }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
 
-.hero-text p {
-  color: #6e6e73;
-  margin-bottom: 20px;
-}
+        .hero-text .subtitle {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
 
-.button {
-  background: #6b4eff;
-  color: white;
-  padding: 14px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 500;
-}
+        .button {
+            background: var(--primary-purple);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
 
-.product-img {
-  width: 300px;
-  border-radius: 20px;
-}
+        .button:hover { opacity: 0.8; }
 
-.section {
-  margin-top: 80px;
-  text-align: center;
-}
+        .hero-img { flex: 1; text-align: right; }
+        .hero-img img { max-width: 350px; border-radius: 20px; }
 
-.section h2 {
-  margin-bottom: 30px;
-}
+        /* --- TAGLINE --- */
+        .tagline {
+            text-align: center;
+            font-size: 24px;
+            margin: 80px 0;
+        }
+        .tagline span { color: var(--primary-purple); }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
+        /* --- SYMPTOMS (3 COLUMNS) --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
 
-.icon {
-  text-align: center;
-  color: #6e6e73;
-}
+        .icon-box img { width: 50px; margin-bottom: 15px; }
 
-.icon div {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
+        /* --- HOW IT WORKS --- */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
 
-.how {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  text-align: center;
-}
+        .how-works {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
 
-.card {
-  flex: 1;
-}
+        .step-card strong { display: block; margin: 10px 0 5px; font-size: 18px; }
+        .step-card p { font-size: 14px; color: var(--text-secondary); margin: 0; }
 
-.footer {
-  margin-top: 80px;
-  font-size: 12px;
-  color: #86868b;
-  text-align: center;
-}
-</style>
+        /* --- WHAT'S INCLUDED --- */
+        .included {
+            display: flex;
+            align-items: center;
+            background: #fbfbfd;
+            padding: 60px;
+            border-radius: 30px;
+            margin-bottom: 100px;
+        }
+
+        .included-list { list-style: none; padding: 0; margin-left: 60px; }
+        .included-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .stars { color: var(--primary-purple); margin-top: 10px; font-size: 14px; }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #86868b;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero, .how-works, .grid-3, .testimonials, .included {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-img { order: -1; margin-bottom: 30px; }
+            .included-list { margin-left: 0; margin-top: 30px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>ANTI-RESACA™ 500mg</h1>
-    <p>Cápsula emocional de dosis única</p>
-    <a href="#" class="button">Comprar ahora</a>
-    <p style="font-size:12px; margin-top:10px;">Uso exclusivamente emocional*</p>
-  </div>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>ANTI-RESACA™ 500mg</h1>
+            <p class="subtitle">Cápsula emocional de dosis única</p>
+            <a href="#" class="button">Comprar ahora</a>
+            <p style="font-size:12px; color:#86868b; margin-top:15px;">Uso exclusivamente emocional*</p>
+        </div>
+        <div class="hero-img">
+            <img src="tu-imagen-pastilla.png" alt="Anti-Resaca Blister">
+        </div>
+    </section>
 
-  <img src="https://via.placeholder.com/300" class="product-img">
-</div>
-
-<!-- FRASE -->
-<div class="section">
-  <p><strong>Decisiones cuestionables anoche?</strong> <span style="color:#6b4eff;">Recupera hoy.</span></p>
-</div>
-
-<!-- ICONOS -->
-<div class="section icons">
-  <div class="icon">
-    <div>💧</div>
-    <p>Sed intensa</p>
-  </div>
-  <div class="icon">
-    <div>🧠</div>
-    <p>Memoria fragmentada</p>
-  </div>
-  <div class="icon">
-    <div>🤫</div>
-    <p>Apreciación del silencio</p>
-  </div>
-</div>
-
-<!-- COMO FUNCIONA -->
-<div class="section">
-  <h2>¿Cómo funciona?</h2>
-  <div class="how">
-    <div class="card">
-      <p><strong>Detecta</strong></p>
-      <p>Ojos cansados, cabeza pesada</p>
+    <div class="tagline">
+        Decisiones cuestionables anoche? <span>Recupera hoy.</span>
     </div>
-    <div class="card">
-      <p><strong>Escanea</strong></p>
-      <p>Acerca el móvil</p>
-    </div>
-    <div class="card">
-      <p><strong>Inicia</strong></p>
-      <p>Sigue las indicaciones</p>
-    </div>
-    <div class="card">
-      <p><strong>Repite</strong></p>
-      <p>Según necesidad</p>
-    </div>
-  </div>
-</div>
 
-<!-- QUE INCLUYE -->
-<div class="section">
-  <h2>¿Qué incluye?</h2>
-  <p>Blíster ANTI-RESACA™ 500mg</p>
-  <p>Estuche premium</p>
-  <p>Chip NFC integrado</p>
-</div>
+    <div class="grid-3">
+        <div class="icon-box">
+            <div style="font-size: 40px;">💧</div>
+            <p>Sed intensa</p>
+        </div>
+        <div class="icon-box">
+            <div style="font-size: 40px;">🧩</div>
+            <p>Memoria fragmentada</p>
+        </div>
+        <div class="icon-box">
+            <div style="font-size: 40px;">🤫</div>
+            <p>Apreciación del silencio</p>
+        </div>
+    </div>
 
-<!-- OPINIONES -->
-<div class="section">
-  <h2>Opiniones</h2>
-  <p>"Nunca supe que necesitaba esto."</p>
-  <p>"Perfecto para el día después."</p>
-  <p>"Funcionó (al menos me reí)."</p>
-</div>
+    <hr style="border: 0; border-top: 1px solid #e5e5e7; margin-bottom: 80px;">
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>Este producto no es un medicamento.</p>
-  <p>Uso exclusivamente emocional.</p>
-  <p>Resultados variables.</p>
-</div>
+    <h2 class="section-title">¿Cómo funciona?</h2>
+    <div class="how-works">
+        <div class="step-card">
+            <div style="font-size: 30px;">👤</div>
+            <strong>Detecta el síntoma</strong>
+            <p>Ojos cansados, cabeza pesada.</p>
+        </div>
+        <div class="step-card">
+            <div style="font-size: 30px;">📱</div>
+            <strong>Escanea la cápsula</strong>
+            <p>Acerca el móvil al tratamiento.</p>
+        </div>
+        <div class="step-card">
+            <div style="font-size: 30px;">🔄</div>
+            <strong>Inicia la recuperación</strong>
+            <p>Sigue las indicaciones en pantalla.</p>
+        </div>
+        <div class="step-card">
+            <div style="font-size: 30px;">🔁</div>
+            <strong>Repite si es necesario</strong>
+            <p>Uso según criterio personal.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">¿Qué incluye?</h2>
+    <div class="included">
+        <img src="tu-imagen-paquete.png" alt="Contenido" style="width: 300px;">
+        <ul class="included-list">
+            <li>• Blíster ANTI-RESACA™ 500mg</li>
+            <li>• Estuche premium</li>
+            <li>• Chip NFC integrado</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Opiniones de nuestros usuarios</h2>
+    <div class="testimonials">
+        <div>
+            <p>"Nunca supe que necesitaba esto."</p>
+            <div class="stars">★★★★★</div>
+        </div>
+        <div>
+            <p>"Perfecto para el día después."</p>
+            <div class="stars">★★★★★</div>
+        </div>
+        <div>
+            <p>"Funcionó (al menos, me hizo reír)."</p>
+            <div class="stars">★★★★★</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>*Este producto no es un medicamento.</p>
+        <p>Uso exclusivamente emocional. Resultado variable según persona.</p>
+        <p>Consultar capacidad de tomar mejores decisiones.</p>
+    </footer>
 
 </div>
 
